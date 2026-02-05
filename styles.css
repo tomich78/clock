@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@700&display=swap');
 
 :root{
-  /* Posición */
+  /* Posición del reloj */
   --clock-x: 10vw;
-  --clock-y: 60vh; /* ✅ más abajo (subí/bajá este valor a gusto) */
+  --clock-y: 60vh;
 
   /* Tamaño responsive */
   --clock-size: clamp(48px, 7vw, 110px);
@@ -12,22 +12,28 @@
 *{ box-sizing: border-box; }
 
 html, body{
-  height: 100%;
   margin: 0;
-  overflow: hidden; /* ✅ evita scroll -> no se mueve */
 }
 
 body{
-  background: url("./fondo.png") no-repeat center center / cover;
+  /* ✅ que la imagen se vea completa */
+  background: url("./fondo.png") no-repeat top center;
+  background-size: contain;     /* <- muestra toda la imagen */
+  background-color: #f2f2f2;    /* relleno si sobran bordes */
+
   font-family: "Funnel Sans", system-ui, sans-serif;
   font-weight: 700;
+
+  /* ✅ permitimos scroll y damos altura para que exista */
+  min-height: 140vh; /* ajustá: 120vh / 160vh según lo que quieras */
+  position: relative; /* importante para el absolute del reloj */
 }
 
+/* ✅ el reloj se mueve con la página (no queda fijo) */
 .clock{
-  position: fixed;
+  position: absolute;
   left: var(--clock-x);
   top: var(--clock-y);
-  transform: translateY(-50%);
 
   display:flex;
   align-items:baseline;
@@ -42,9 +48,9 @@ body{
 
 #seconds{ min-width: 2.3em; }
 
-/* ✅ PM/AM más pegado y más grande */
+/* ✅ PM más cerca y más grande */
 .ampm{
-  margin-left: 0.10em;   /* antes 0.25em -> muy a la derecha */
-  font-size: 0.75em;     /* antes 0.6em -> muy chico */
-  letter-spacing: 0;
+  margin-left: 0.05em;  /* más pegado */
+  font-size: 0.9em;     /* más grande */
+  line-height: 1;
 }
