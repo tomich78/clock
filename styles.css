@@ -1,48 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@700&display=swap');
 
 :root{
-  /* Altura del reloj (ajustá solo esto si querés subir/bajar) */
-  --clock-y: 62vh;
+  /* Posición (dejalo como lo tenías) */
+  --clock-x: 10vw;   /* desde la izquierda */
+  --clock-y: 52vh;   /* desde arriba */
 
-  /* Tamaño responsive */
-  --clock-size: clamp(42px, 9vw, 96px);
+  /* Tamaño fijo (cambiá este número si querés más grande) */
+  --clock-size: 110px;
 }
 
-*{
-  box-sizing: border-box;
-}
+*{ box-sizing: border-box; }
 
 body{
-  margin: 0;
-  height: 100vh;
+  margin:0;
+  height:100vh;
   background: url("./fondo.png") no-repeat center center / cover;
   font-family: "Funnel Sans", system-ui, sans-serif;
+  font-weight: 700; /* ✅ asegura negrita */
 }
 
-/* 🔥 Reloj */
 .clock{
   position: fixed;
-  left: 50%;
+  left: var(--clock-x);
   top: var(--clock-y);
-  transform: translate(-50%, -50%);
+  transform: translateY(-50%);
 
-  display: flex;
-  align-items: baseline;
+  display:flex;
+  align-items:baseline;
   gap: 0.12em;
 
   font-size: var(--clock-size);
+  font-weight: 700; /* ✅ asegura negrita */
   color: rgb(49, 49, 49);
-  text-shadow: 0.25rem 0.25rem 0.6rem rgba(255,255,255,0.15);
+  text-shadow: 0.25rem 0.25rem 0.6rem rgba(255,255,255,0.1);
   user-select: none;
 }
 
-#seconds{
-  min-width: 2.4em;
-}
-
-.ampm{
-  margin-left: 0.25em;
-  font-size: 0.55em;
-}
-
-
+#seconds{ min-width: 2.2em; }
+.ampm{ margin-left: .25em; font-size: .6em; }
