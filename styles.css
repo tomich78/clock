@@ -11,7 +11,7 @@
     - ideal: 12vw   (escala con pantalla)
     - máximo: 150px (no se desborda)
   */
-  --clock-size: clamp(90px, 12vw, 150px);
+  --clock-size: clamp(48px, 7vw, 110px);
 }
 
 *{
@@ -51,3 +51,4 @@ body{
   margin-left: .25em;
   font-size: 0.6em;
 }
+
