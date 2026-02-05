@@ -2,28 +2,25 @@
 
 :root{
   /* Posición */
-  --clock-x: 10vw;   /* desde la izquierda */
-  --clock-y: 52vh;   /* desde arriba */
+  --clock-x: 10vw;
+  --clock-y: 60vh; /* ✅ más abajo (subí/bajá este valor a gusto) */
 
-  /*
-    Tamaño responsive controlado:
-    - mínimo: 90px  (nunca chico)
-    - ideal: 12vw   (escala con pantalla)
-    - máximo: 150px (no se desborda)
-  */
+  /* Tamaño responsive */
   --clock-size: clamp(48px, 7vw, 110px);
 }
 
-*{
-  box-sizing: border-box;
+*{ box-sizing: border-box; }
+
+html, body{
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* ✅ evita scroll -> no se mueve */
 }
 
 body{
-  margin:0;
-  height:100vh;
   background: url("./fondo.png") no-repeat center center / cover;
   font-family: "Funnel Sans", system-ui, sans-serif;
-  font-weight: 700; /* ✅ fuerza negrita */
+  font-weight: 700;
 }
 
 .clock{
@@ -37,18 +34,17 @@ body{
   gap: 0.12em;
 
   font-size: var(--clock-size);
-  font-weight: 700; /* ✅ mantiene grosor */
+  font-weight: 700;
   color: rgb(49, 49, 49);
   text-shadow: 0.25rem 0.25rem 0.6rem rgba(255,255,255,0.1);
   user-select: none;
 }
 
-#seconds{
-  min-width: 2.3em;
-}
+#seconds{ min-width: 2.3em; }
 
+/* ✅ PM/AM más pegado y más grande */
 .ampm{
-  margin-left: .25em;
-  font-size: 0.6em;
+  margin-left: 0.10em;   /* antes 0.25em -> muy a la derecha */
+  font-size: 0.75em;     /* antes 0.6em -> muy chico */
+  letter-spacing: 0;
 }
-
