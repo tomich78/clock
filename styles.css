@@ -44,8 +44,10 @@ body{
 }
 
 .ampm{
-  font-size: 0.9em; /* más grande y cerca */
+  margin-left: 0.1em;
+  font-size: 1.0em; /* más grande y cerca */
 }
+
 
 
 
