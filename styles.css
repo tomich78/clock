@@ -44,9 +44,10 @@ body{
 }
 
 .ampm{
-  margin-left: -0.35em; /* 🔥 empuja a la izquierda */
+  margin-left: -1.2em; /* 🔥 empuja a la izquierda */
   font-size: 1em;
 }
+
 
 
 
